@@ -1,0 +1,21 @@
+{
+  "coches": {
+    "coche": [
+      {
+        "marca": "Seat",
+        "modelo": "Ibiza Special",
+        "cilindrada": 1000
+      },
+      {
+        "modelo": "Toledo 1.9 TDI",
+        "marca": "Seat",
+        "cilindrada": 1900
+      },
+      {
+        "cilindrada": 1800,
+        "marca": "Honda",
+        "modelo": "Civic VTec Executive"
+      }
+    ]
+  }
+}

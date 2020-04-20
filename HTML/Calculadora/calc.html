@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="cssCacl.css" rel="stylesheet">
+    <title>Calculator!</title>
+</head>
+
+<body>
+    <div class="calc">
+        <h3 id="titulo">Calculadora</h3>
+        <table>
+            <tr class="resultado">
+                <td colspan="3"><button id="result">0</button></td>
+                <td><button onclick="add('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="add('1')">1</button></td>
+                <td><button onclick="add('2')">2</button></td>
+                <td><button onclick="add('3')">3</button></td>
+                <td><button onclick="add('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="add('4')">4</button></td>
+                <td><button onclick="add('5')">5</button></td>
+                <td><button onclick="add('6')">6</button></td>
+                <td><button onclick="add('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="add('7')">7</button></td>
+                <td><button onclick="add('8')">8</button></td>
+                <td><button onclick="add('9')">9</button></td>
+                <td colspan="3"><button onclick="add('/')">/</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick="add('0')">0</button></td>
+                <td><button onclick="add('.')">.</button></td>
+                <td><button onclick="raiz()">√</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick="del()" class="ac">AC</button></td>
+                <td><button onclick="power()">x²</button></td>
+                <td><button onclick="calc()">=</button></td>
+            </tr>
+        </table>
+    </div>
+    <script src="jsCalc.js"></script>
+</body>
+
+</html>

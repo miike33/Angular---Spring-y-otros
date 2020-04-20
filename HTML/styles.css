@@ -1,0 +1,65 @@
+body{
+    background-image: linear-gradient(to right, black, grey);
+    color: blanchedalmond;
+    
+}
+
+a{
+    color: white;
+}
+
+
+h1{
+    background: linear-gradient(90deg, black 0%, red, grey 100%);
+    text-align: center;
+    font-size: 2cm;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.enlaceFMA{
+    color: white;
+    border-style: solid;
+    border-radius: 10cm;
+    width: 240px;
+    margin-left: 20px;
+    padding: 5px;
+    border: rgb(209, 225, 65) 3px solid;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.imagen{
+    background-color: darkgreen;
+    width: 640px;
+    margin-left: 30%;
+}
+
+.textoImagen{
+    margin-left: 40%;
+}
+
+#copyright{
+    margin-left: 30%;
+}
+
+
+
+
+.troleo {
+    margin-left: 5%;
+    margin-top: 5%;
+    font-size: 40px;
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+  }
+
+  @keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  @-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
