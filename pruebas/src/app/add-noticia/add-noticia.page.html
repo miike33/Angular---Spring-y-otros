@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="cabecera">
+    <ion-title class="title-cabecera" color="light">MikeComputers</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form #addForm="ngForm">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="floating"> Titulo <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input minlength="4" maxlength="80" [(ngModel)]="newNoticia.titulo" name="titulo" required type="text">
+        </ion-input>
+      </ion-item>
+
+      <ion-label style="margin-left: 18px;" class="ion-text-wrap">Categoría: </ion-label>
+      <ion-text color="danger">*</ion-text>
+      <ion-item>
+        <ion-select required ok-text="Aceptar" cancel-text="Cancelar" [(ngModel)]="newNoticia.categoria" name="categoria">
+          <ion-select-option value="informatica">Informática</ion-select-option>
+          <ion-select-option value="smartphone">Smartphone</ion-select-option>
+          <ion-select-option value="games">Games</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+
+      <ion-label style="margin-left: 18px;" class="ion-text-wrap">Autor: </ion-label>
+      <ion-text color="danger">*</ion-text>
+      <ion-item >
+        <ion-select required ok-text="Aceptar" cancel-text="Cancelar" [(ngModel)]="autor" name="autor">
+          <ion-select-option [value]='autor.id_user' *ngFor="let autor of autores"> {{autor.nombre}} </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="floating">Url de la Imagen<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input minlength="4" name="imagen" required [(ngModel)]="newNoticia.imagen"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Contenido<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-textarea minlength="10" class="required" name="contenido" required [(ngModel)]="newNoticia.contenido"></ion-textarea>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button type="submit" [disabled]="addForm.invalid" (click)='addNoticia()'>Añadir Noticia</ion-button>
+      <ion-button type="submit" color="medium" (click)="goBack()">Cancelar</ion-button>
+    </div>
+  </form>
+</ion-content>
+
+<ion-footer class="footer">
+  <ion-toolbar color="dark">
+    <ion-title class="pie">Copyright 2020 - MikeComputers</ion-title>
+  </ion-toolbar>
+</ion-footer>

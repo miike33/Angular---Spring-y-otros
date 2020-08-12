@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Tareas</title>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@5.1.1/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@5.1.1/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@5.1.1/css/ionic.bundle.css" />
+
+</head>
+
+<body onload="onLoad()">
+  <ion-app>
+
+    <ion-menu content-id="content">
+      <ion-header>
+        <ion-toolbar mode="ios" color="tertiary">
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-menu-toggle>
+          <ion-list lines="full">
+            <ion-item-divider>
+              <ion-label>Reordenar y Compartir</ion-label>
+            </ion-item-divider>
+            <ion-item onclick="toggleReorder()">
+              <ion-label>Activar/Desactivar Reordenar</ion-label>
+              <ion-icon slot="end" name="list-outline"></ion-icon>
+            </ion-item>
+            <ion-item onclick="share()">
+              <ion-label>Compartir</ion-label>
+              <ion-icon slot="end" name="share-social-outline"></ion-icon>
+            </ion-item>
+            <ion-item-divider>
+              <ion-label>Eliminar</ion-label>
+            </ion-item-divider>
+            <ion-item onclick="deleteItem()">
+              <ion-label>Borrar todo</ion-label>
+              <ion-icon slot="end" name="trash" color="danger"></ion-icon>
+            </ion-item>
+          </ion-list>
+        </ion-menu-toggle>
+      </ion-content>
+    </ion-menu>
+
+
+    <div class="ion-page" id="content">
+      <ion-header>
+        <ion-toolbar color="dark">
+          <ion-title>TareaS!</ion-title>
+          <ion-buttons slot="primary">
+            <ion-button onclick="addEditItem()">
+              <ion-icon slot="icon-only" name="add" color="success"></ion-icon>
+            </ion-button>
+            <ion-button onclick="toggleReorder()">
+              <ion-icon slot="icon-only" name="list-outline"></ion-icon>
+            </ion-button>
+            <ion-menu-button></ion-menu-button>
+
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+
+      <ion-content>
+        <ion-tabs>
+          <ion-tab tab="home">
+            <ion-list lines="full">
+              <ion-reorder-group></ion-reorder-group>
+            </ion-list>
+          </ion-tab>
+          <ion-tab tab="school">
+            <ion-list lines="full">
+              <ion-reorder-group></ion-reorder-group>
+            </ion-list>
+          </ion-tab>
+          <ion-tab-bar slot="bottom" color="dark">
+            <ion-tab-button tab="home">
+              <ion-icon name="home"></ion-icon>
+            </ion-tab-button>
+            <ion-tab-button tab="school">
+              <ion-icon name="school"></ion-icon>
+            </ion-tab-button>
+          </ion-tab-bar>
+        </ion-tabs>
+      </ion-content>
+
+    </div>
+  </ion-app>
+
+  <script src="tareas.js"></script>
+  <script src="cordova.js"></script>
+</body>
+
+</html>

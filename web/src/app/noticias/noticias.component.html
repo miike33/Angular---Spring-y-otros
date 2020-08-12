@@ -1,0 +1,15 @@
+<div class="noticias">
+    <h2>Imagen</h2>
+    <h1><a href="#" (click)="detallesEvento($event)">Titulo</a></h1>
+    <div class="row">
+        <div class="card-columns">
+            <ion-item class="card" *ngFor="let noticia of noticias">
+                {{noticia.titulo}}
+            </ion-item>
+        </div>
+    </div>
+    <h6>Autor</h6>
+</div>
+<ion-content>
+
+</ion-content>

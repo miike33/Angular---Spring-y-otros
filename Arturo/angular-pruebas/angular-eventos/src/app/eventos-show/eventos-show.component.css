@@ -1,0 +1,8 @@
+.card-text {
+  white-space: pre-wrap;
+}
+
+.card>img {
+  width: 400px;
+  height: 200px;
+}

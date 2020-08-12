@@ -1,0 +1,34 @@
+Fran:
+- Primer documento, verlo entero para springboot y demas.
+- Lo que mas nos interesa es MVC
+- Los ficheros de recursos estan los proyectos hechos, hay que mirarlos. (importar a spring y eso)
+- Para proyecto, crear clases a partir de la base de datos (hibernate)
+- Empezar proyecto y mirar validaciones de errores
+
+Arturo:
+- mirar todo
+- ejercicio hasta 1.5 en diferentes paginas (esperar que corrija el enunciado)
+- nuevo ejercicio opcional de login (hay que logear con postman) en postman: http://arturober.com:5004/auth/login
+- ver tema de tokens (no se uso token a secas, hay que hacer 'Bears' + token
+1/6
+Termina ejercicio de guardianes y hacer el nuevo de validar formulario, ver ejemplos en github de Arturo,
+los apuntes de validacion de formulario no estan muy actualizados.
+
+Fernando:
+- toquitear la apk y si subirla
+- modificar ejercicios de angular con ionic
+
+
+Amanda:
+- empieza a echar ofertas, finaliza todo el perfil de cv, linkedin y infojobs.
+
+
+
+Proyecto final:
+- Una tabla que genere servicios web para acceder a ella desde angular o ionic, etc
+(Crear base de datos, servicios en spring (MVC) y mostrarlo en Angular)
+Con una tabla es suficiente, si se hacen mas, mejor
+Por ejemplo, equipos de la NBA, pillarlos de una base de datos (si quieres mas tablas, hay que hacer
+relaciones y demas) con spring y mostrarlos en Angular.
+Despues si quieres ya que se muestren los jugadores, etc.
+Las cosas deben salir por Angular, pero se puede usar otra cosa que habia por ahi para mostrarlo mas rapido el back (thymeleaf)

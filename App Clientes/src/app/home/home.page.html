@@ -1,0 +1,72 @@
+<ion-menu side="start" content-id="content">
+  
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Start Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item [routerLink]="['/details']">Detalles</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<div class="ion-page" id="content">
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Lista de Clientes
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button color="tertiary" [routerLink]="['/add-cliente']">
+      Añadir Cliente
+      </ion-button>
+    </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button (click)="mostrarActivados()" color ="tertiary" fill = "solid" *ngIf = "mostrarActivos">Activos</ion-button>
+        <ion-button (click)="mostrarActivados()" color ="dark" fill = "solid" *ngIf = "!mostrarActivos">No activos</ion-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <div  *ngFor= "let cliente of clientes">
+    <ion-item >
+      
+      <ion-item-sliding>
+
+        <ion-item [routerLink]="['/mostrar-cliente', {nombre:cliente.nombre, apellido:cliente.apellido, email:cliente.email, imagen:cliente.imagen}]" [disabled]="cliente.activo === 'true' ? false: true">
+        <ion-label>{{cliente.nombre}} {{cliente.apellido}}</ion-label>
+      </ion-item>
+        
+        <ion-item-options side="start">
+          <ion-item-option color="primary" [routerLink]="['/actualizar-cliente', {id:cliente.id, nombre:cliente.nombre, apellido:cliente.apellido, email:cliente.email, imagen:cliente.imagen, activo:cliente.activo}]">Editar</ion-item-option>
+        </ion-item-options>
+
+        <ion-item-options side="end">
+          <ion-item-option color="danger" (click)="deleteCliente(cliente.id)">Borrar</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item>
+  </div>
+
+  </ion-list>
+  
+</ion-content>
+</div>

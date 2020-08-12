@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      GaleriA!
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-item>
+  <ion-label>Insertar nombre: </ion-label>
+  <ion-input [(ngModel)]="nombre"> </ion-input>
+</ion-item>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+
+    <ion-button [routerLink]="['/add-edit-imagen', { nombre:nombre }]"> Ir a la segunda pantalla</ion-button>
+
+
+
+    <!--<ion-slides>
+      <ion-slide *ngFor="let imagen of imagenes">
+        <img src="assets/{{imagen}}" />
+      </ion-slide>
+    </ion-slides> -->
+  </div>
+</ion-content>

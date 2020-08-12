@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.mikelopez.tareas"
+    versionCode = "1"
+    version     = "0.0.1" >
+
+    <name>TareaS!</name>
+
+    <description>
+      Lista de tareas.
+  </description>
+
+    <author href="https://mlopez.xyz" email="maikel_355@hotmail.com">
+      Michael Lopez martinez
+  </author>
+
+    <access origin="*" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
+
+    <plugin name="cordova-plugin-whitelist" />
+    <plugin name="cordova-plugin-splashscreen" />
+    <plugin name="cordova-plugin-vibration" />
+    <plugin name="cordova-plugin-geolocation" />
+    <plugin name="cordova-plugin-camera" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="5.4.0" />
+
+    <icon src="icon.png" />
+    <splash src="splash.png" />
+
+    <preference name="phonegap-version" value="cli-9.0.0" />
+
+</widget>

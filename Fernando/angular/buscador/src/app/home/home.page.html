@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Buscador
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-searchbar showCancelButtom="focus" debounce="500" [(ngModel)]='filter' (ionChange)='obtenerDatos()'>
+  </ion-searchbar>
+
+
+  <ion-item *ngFor="let url of urls" [href]="url.u" target="_blank">
+    <ion-avatar slot="start">
+      <img [src]="url.i">
+    </ion-avatar>
+    <ion-label>
+      <h2>{{url.t}}</h2>
+      <p>{{url.u}}</p>
+    </ion-label>
+  </ion-item>
+
+</ion-content>

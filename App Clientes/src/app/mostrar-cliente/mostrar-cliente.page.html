@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>mostrarCliente</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card mode="ios">
+    <img [src]="cliente.imagen" *ngIf = "cliente.imagen != null"/>
+    <ion-card-header>
+      <ion-card-title>{{cliente.nombre}}</ion-card-title>
+      <ion-card-title>{{cliente.apellido}}</ion-card-title>
+      <ion-card-title>{{cliente.email}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

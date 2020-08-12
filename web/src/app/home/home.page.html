@@ -1,0 +1,55 @@
+<ion-menu content-id="content" side="start">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item href="" class="menu">
+        <ion-icon name="desktop-outline"></ion-icon>
+        <ion-label style="padding-left: 10px;">Informática</ion-label>
+      </ion-item>
+      <ion-item href="" class="menu">
+        <ion-icon name="phone-portrait-outline"></ion-icon>
+        <ion-label style="padding-left: 10px;">Smartphones</ion-label>
+      </ion-item>
+      <ion-item href="" class="menu">
+        <ion-icon name="game-controller-outline"></ion-icon>
+        <ion-label style="padding-left: 10px;">Games</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-item href="" class="menu">
+    <ion-icon name="person"></ion-icon>
+    <ion-label style="padding-left: 10px;">Identificarse</ion-label>
+  </ion-item>
+  <ion-item href="" class="menu">
+    <ion-icon name="key-outline"></ion-icon>
+    <ion-label style="padding-left: 10px;">Registrarse</ion-label>
+  </ion-item>
+  <ion-item href="" class="menu">
+    <ion-icon name="information-circle-outline"></ion-icon>
+    <ion-label style="padding-left: 10px;">Acerca de mí</ion-label>
+  </ion-item>
+</ion-menu>
+
+
+<div class="ion-page" id="content">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>MikeComputers</ion-title>
+      <ion-buttons slot="end">
+        <ion-button color="primary">Añadir Noticia</ion-button>
+        <ion-button>
+          <ion-icon name="search"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+  </ion-content>
+</div>

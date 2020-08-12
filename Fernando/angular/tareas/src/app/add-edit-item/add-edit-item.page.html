@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ToDo</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button color="danger" [routerLink]="['/home']">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+      <ion-button color="primary" (click)="save()">
+        <ion-icon slot="icon-only" name="checkmark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Select date</ion-label>
+      <ion-datetime display-format="D MMM YYYY" max="2050-12-31" [(ngModel)]="item.date"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Enter task</ion-label>
+      <ion-input [(ngModel)]="item.task" minlength="5" maxlength="25"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-segment [(ngModel)]="item.icon">
+    <ion-segment-button *ngFor="let button of buttons" [value]="button">
+      <ion-icon [name]="button"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-content>

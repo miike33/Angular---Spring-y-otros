@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="cabecera">
+    <ion-title class="title-cabecera" color="light">MikeComputers</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-button title="Editar Noticia" [routerLink]="['/add-noticia', {idNoticia:noticia.idNoticia}]" slot="end" style="margin-right: 10px;" color="primary">
+      <ion-icon name="create-outline"></ion-icon>
+    </ion-button>
+    <ion-button title="Borrar Noticia" (click)="deleteNotica()" slot="end" style="margin-right: 10px;" color="danger">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="contenido">
+  <ion-card class="card">
+    <ion-card-header>
+      <ion-card-subtitle>
+        {{noticia.dateAt | date: 'dd/MM/yyyy'}} - {{noticia.categoria | titlecase}}
+      </ion-card-subtitle>
+      <ion-card-title>
+        <h1 class="titulo"> {{ noticia.titulo |titlecase }} </h1>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <img class="imagen" [src]='noticia.imagen'>
+      <ion-card-title class="noticia"> {{ noticia.contenido }} </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+  <ion-footer class="footer">
+    <ion-toolbar color="dark">
+      <ion-title class="pie">Copyright 2020 - MikeComputers</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

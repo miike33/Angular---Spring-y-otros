@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      IoniCalc
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" color="secondary" size="large">{{ resultado }}</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" (click)="mostrar(1)">1</ion-button>
+          <ion-button expand="block" (click)="mostrar(4)">4</ion-button>
+          <ion-button expand="block" (click)="mostrar(7)">7</ion-button>
+          <ion-button expand="block" (click)="mostrar(0)">0</ion-button>
+
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" (click)="mostrar(2)">2</ion-button>
+          <ion-button expand="block" (click)="mostrar(5)">5</ion-button>
+          <ion-button expand="block" (click)="mostrar(8)">8</ion-button>
+          <ion-button expand="block" color="medium" (click)="mostrar('/')">/</ion-button>
+
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" (click)="mostrar(3)">3</ion-button>
+          <ion-button expand="block" (click)="mostrar(6)">6</ion-button>
+          <ion-button expand="block" (click)="mostrar(9)">9</ion-button>
+          <ion-button expand="block" color="medium" (click)="raiz()">√</ion-button>
+
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="medium" (click)="mostrar('+')">+</ion-button>
+          <ion-button expand="block" color="medium" (click)="mostrar('-')">-</ion-button>
+          <ion-button expand="block" color="medium" (click)="mostrar('*')">*</ion-button>
+          <ion-button expand="block" color="medium" (click)="power()">^2</ion-button>
+
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="block" color="success" (click)="calcular()">=</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="danger" (click)="borrar()">AC</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

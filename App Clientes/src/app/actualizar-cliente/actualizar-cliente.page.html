@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>actualizarCliente</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Apellido</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.apellido"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="email" [(ngModel)]="cliente.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Imagen</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.imagen"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Activo</ion-label>
+      <ion-toggle  [(ngModel)]="activo"></ion-toggle>
+    </ion-item>
+  </ion-list>
+  
+  <ion-button (click)="actualizarCliente()" expand="block">Actualizar</ion-button>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Tareas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" pullFactor="0.5" pullMin="100" pullMax="200">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="bubbles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+ 
+
+  <ion-item>
+    <ion-label>Tarea</ion-label>
+    <ion-input [(ngModel)]="tarea"></ion-input>
+  </ion-item>
+
+  <ion-button shape="round" (click)="guardarTareas()">Guardar</ion-button>
+
+  <ion-button shape="round" (click)="borrarTareas()">Borrar</ion-button>
+    
+  <ion-list>
+    <ion-item *ngFor="let tarea of listaTareas">
+      <ion-label>{{tarea}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

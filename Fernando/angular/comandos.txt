@@ -1,0 +1,3 @@
+Compilar: ionic build --prod -- --base-href .
+nueva pagina: ionic generate page nombre
+nuevo proyecto: ionic start nombre blank --type=angular --no-git --no-link

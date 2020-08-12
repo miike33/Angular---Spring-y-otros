@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>AddCliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-label>Nombre:</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.nombre" name="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Apellido:</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.apellido" name="apellido"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-input type="email" [(ngModel)]="cliente.email" name="email"></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block" (click)='enviarCliente()'>Añadir Cliente</ion-button>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="cabecera">
+    <ion-title class="title-cabecera" color="light">MikeComputers</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form #addForm="ngForm">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="floating">Nombre: <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input minlength="3" maxlength="15" required name="nombre" [(ngModel)]="usuario.nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email: <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input minlength="5" maxlength="40" required type="email" name="email" [(ngModel)]="usuario.email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña: <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input minlength="4" maxlength="15" type="password" required name="password" [(ngModel)]="usuario.password"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button [disabled]="addForm.invalid" type="submit" (click)="addUser()">Añadir Usuario</ion-button>
+      <ion-button type="submit" color="medium" (click)="goBack()">Cancelar</ion-button>
+    </div>
+  </form>
+</ion-content>
+
+<ion-footer class="footer">
+  <ion-toolbar color="dark">
+    <ion-title class="pie">Copyright 2020 - MikeComputers</ion-title>
+  </ion-toolbar>
+</ion-footer>

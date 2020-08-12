@@ -1,0 +1,72 @@
+<ion-menu content-id="content" side="start">
+  <ion-header >
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content>
+      </ion-refresher-content>
+    </ion-refresher>
+    <ion-list>
+      <ion-item href="" class="menu">
+        <ion-icon name="desktop-outline"></ion-icon>
+        <ion-label style="padding-left: 10px;">Informática</ion-label>
+      </ion-item>
+      <ion-item href="" class="menu">
+        <ion-icon name="phone-portrait-outline"></ion-icon>
+        <ion-label style="padding-left: 10px;">Smartphones</ion-label>
+      </ion-item>
+      <ion-item href="" class="menu">
+        <ion-icon name="game-controller-outline"></ion-icon>
+        <ion-label style="padding-left: 10px;">Games</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-item href="" class="menu">
+    <ion-icon name="add-circle-outline"></ion-icon>
+    <ion-label style="padding-left: 10px;">Añadir Usuario</ion-label>
+  </ion-item>
+  <ion-item href="" class="menu">
+    <ion-icon name="trash-outline"></ion-icon>
+    <ion-label style="padding-left: 10px;">Eliminar Usuario</ion-label>
+  </ion-item>
+  <ion-item href="" class="menu">
+    <ion-icon name="information-circle-outline"></ion-icon>
+    <ion-label style="padding-left: 10px;">Acerca de mí</ion-label>
+  </ion-item>
+</ion-menu>
+
+<div class="ion-page" id="content">
+  <ion-header [translucent]="true">
+    <ion-toolbar class="cabecera">
+      <ion-title class="title-cabecera" color="light">MikeComputers</ion-title>
+      <ion-buttons slot="end">
+        <ion-button color="success">Añadir Noticia</ion-button>
+        <ion-input class="search"></ion-input>
+        <ion-button color="light">
+          <ion-icon name="search" inputmode="search" color="light"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-card class="noticia" *ngFor="let noticia of noticias">
+      <img [src]='noticia.imagen'>
+      <ion-card-header>
+        <ion-card-title>{{ noticia.titulo | titlecase }}</ion-card-title>
+        <ion-card-subtitle> {{ noticia.dateAt | date:'dd/MM/yyyy' }} - {{ noticia.categoria | titlecase}}</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+    <ion-footer class="footer">
+      <ion-toolbar color="dark">
+        <ion-title class="pie">Copyright 2020 - MikeComputers</ion-title>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-content>
+</div>

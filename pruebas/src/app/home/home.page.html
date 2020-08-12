@@ -1,0 +1,78 @@
+<!-- Menu lateral -->
+<ion-menu content-id="content" side="start">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-list>
+      <ion-item href="" class="menu" (click)="orderCategory($event, '')">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label style="padding-left: 10px;">Inicio</ion-label>
+      </ion-item>
+      <ion-item href="" class="menu" (click)="orderCategory($event, 'informatica')">
+        <ion-icon name="desktop-outline"></ion-icon>
+        <ion-label style="padding-left: 10px;">Informática</ion-label>
+      </ion-item>
+      <ion-item href="" class="menu" (click)="orderCategory($event, 'smartphones')">
+        <ion-icon name="phone-portrait-outline"></ion-icon>
+        <ion-label style="padding-left: 10px;">Smartphones</ion-label>
+      </ion-item>
+      <ion-item href="" class="menu" (click)="orderCategory($event, 'games')">
+        <ion-icon name="game-controller-outline"></ion-icon>
+        <ion-label style="padding-left: 10px;">Games</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-item href="" class="menu" [routerLink]="['/list-users']">
+    <ion-icon name="people-circle-outline"></ion-icon>
+    <ion-label style="padding-left: 10px;">Lista de usuarios</ion-label>
+  </ion-item>
+  <ion-item href="" class="menu" [routerLink]="['/contact-info']">
+    <ion-icon name="information-circle-outline"></ion-icon>
+    <ion-label style="padding-left: 10px;">Acerca de mí</ion-label>
+  </ion-item>
+</ion-menu>
+
+<!-- Header -->
+<div class="ion-page" id="content">
+  <ion-header [translucent]="true">
+    <ion-toolbar class="cabecera">
+      <ion-title class="title-cabecera" color="light">MikeComputers</ion-title>
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="['/add-noticia', {idNoticia:-1}]" color="success">Añadir Noticia</ion-button>
+        <ion-searchbar placeholder="Buscar" name="search" animated [(ngModel)]="filterSearch"></ion-searchbar>
+      </ion-buttons>
+      <ion-buttons slot="start">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <!-- Listado de noticias --> 
+  <ion-content class="ion-padding">
+    <ion-card class="noticia"
+      *ngFor="let noticia of noticias | noticiaFilter:filterSearch | categoriaFilter:categoriaFilter">
+      <img [src]='noticia.imagen' [routerLink]="['/details', {idNoticia:noticia.idNoticia}]">
+      <ion-card-header [routerLink]="['/details', {idNoticia:noticia.idNoticia}]">
+        <ion-card-title class="titulo-noticia">
+          <h1>{{ noticia.titulo}}</h1>
+        </ion-card-title>
+        <ion-card-subtitle> {{ noticia.dateAt | date:'dd/MM/yyyy' }} - {{ noticia.categoria | titlecase }}
+        </ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+    <!-- Pie de pagina -->
+    <ion-footer class="footer">
+      <ion-toolbar color="dark">
+        <ion-title class="pie">Copyright 2020 - MikeComputers</ion-title>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-content>
+</div>

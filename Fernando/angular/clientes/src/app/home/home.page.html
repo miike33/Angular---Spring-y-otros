@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Lista de Clientes
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="success" [routerLink]="['/add-cliente']">
+        Añadir Cliente
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <ion-item *ngFor="let usuario of usuarios">
+      <ion-label>{{usuario.nombre}}</ion-label>
+      <ion-button color="danger" type="submit" expand="block" (click)='borrarCliente(usuario.id)'>
+        Borrar Cliente
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

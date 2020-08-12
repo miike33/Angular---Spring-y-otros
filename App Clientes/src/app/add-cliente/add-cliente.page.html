@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>AddCliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  [fullscreen]="true">
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.nombre" required="true" minlength="5" maxlength="20"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Apellido</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.apellido" required="true" minlength="5" maxlength="20"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="email" [(ngModel)]="cliente.email" required="true" minlength="5" maxlength="30"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Imagen</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.imagen" required="true"></ion-input>
+    </ion-item>
+  </ion-list>
+  
+  <ion-button (click)="enviarCliente()" expand="block">Add Todo</ion-button>
+ 
+  
+</ion-content>
+
+<!-- private Long id;
+	private String nombre;
+	private String apellido;
+	private String email; -->

@@ -1,0 +1,31 @@
+.title-cabecera {
+  font-size: 30px;
+}
+
+.cabecera {
+  --background: black;
+  font-family: "Courier New", Courier, monospace;
+}
+
+p {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.contenido {
+  margin-top: 5%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.icon {
+  display: inline-block;
+  font-size: 35px;
+  color: #1b0202;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.text {
+  display: inline-block;
+  vertical-align: middle;
+}

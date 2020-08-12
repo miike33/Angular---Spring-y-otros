@@ -1,0 +1,13 @@
+.img-card {
+  width: 400px;
+  height: 200px;
+}
+
+.card-img-top, .card-title {
+  cursor: pointer;
+}
+
+.card-title:hover {
+  color: blue;
+  text-decoration: underline;
+}
